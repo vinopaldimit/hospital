@@ -1,5 +1,9 @@
 package hospital;
 
+import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.is;
+import static org.junit.Assert.assertThat;
+
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -7,20 +11,55 @@ public class WitchDoctorTest {
 
 	@Test
 	public void shouldHaveSalary() {
-		//Arrange
-		WitchDoctor underTest = new WitchDoctor("","");
-		//Act
+		// Arrange
+		Doctor underTest = new WitchDoctor("", "", "");
+		// Act
 		int salary = underTest.getSalary();
-		//Assert
-		Assert.assertEquals(90000,salary);
+		// Assert
+		Assert.assertEquals(90000, salary);
 	}
+
 	@Test
 	public void shouldHaveSpecialty() {
-		//arrange
-		WitchDoctor underTest = new WitchDoctor("","");
-		//act
+		// arrange
+		Doctor underTest = new WitchDoctor("", "", "general");
+		// act
 		String result = underTest.getSpecialty();
 		Assert.assertEquals("general", result);
 	}
-	
+
+	@Test
+	public void shouldHaveAName() {
+		Doctor underTest = new WitchDoctor("", "Robert", "voodoo");
+
+		String result = underTest.getName();
+
+		assertThat(result, is("Robert"));
+	}
+	@Test
+	public void shouldHaveAlternativeSpecialty() {
+		//arrange
+		Doctor underTest = new WitchDoctor("","", "voodoo");
+		//act
+		String result = underTest.getSpecialty();
+		Assert.assertEquals("voodoo", result);
+	}
+	@Test
+	public void shouldDrawBlood() {
+		Doctor underTest = new WitchDoctor("Emp 2","Dr. Spaceman", "voodoo");
+		
+		Patient bob = new Patient();
+		underTest.drawBlood(bob);
+		int result = bob.getBloodLevel();
+		assertThat(result,is(equalTo(0)));
+	}
+	@Test
+	public void increasePatientHealth() {
+		Doctor underTest = new WitchDoctor("Emp 2","Dr. Spaceman", "buttocks");
+		
+		Patient bob = new Patient();
+		underTest.increasePatientHealth(bob);
+		int result = bob.getHealthLevel();
+		assertThat(result,is(equalTo(11)));
+	}
 }

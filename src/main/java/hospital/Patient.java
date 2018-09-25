@@ -41,6 +41,9 @@ public class Patient {
 		healthLevel ++;
 		
 	}
+	public void reduceBlood(int pintsOfBlood) {
+	bloodLevel -= pintsOfBlood;
+	}
 	
 	
 

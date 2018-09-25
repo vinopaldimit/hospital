@@ -1,19 +1,14 @@
 package hospital;
 
-public class WitchDoctor {
+public class WitchDoctor extends Doctor {
 
-	public WitchDoctor(String string, String string2) {
-		
+	public WitchDoctor(String employeeNumber, String name, String specialty) {
+		super(employeeNumber, name, specialty);
 	}
-
-	public int getSalary() {
-
-		return 90000;
-	}
-
-	public String getSpecialty() {
 	
-		return "general";
+	@Override
+	public void drawBlood(Patient bob) {
+		bob.reduceBlood(20);
 	}
 
 }
