@@ -12,7 +12,7 @@ public class WitchDoctorTest {
 	@Test
 	public void shouldHaveSalary() {
 		// Arrange
-		Doctor underTest = new WitchDoctor("", "", "");
+		Doctor underTest = new WitchDoctor("", "", "", 90000);
 		// Act
 		int salary = underTest.getSalary();
 		// Assert
@@ -22,7 +22,7 @@ public class WitchDoctorTest {
 	@Test
 	public void shouldHaveSpecialty() {
 		// arrange
-		Doctor underTest = new WitchDoctor("", "", "general");
+		Doctor underTest = new WitchDoctor("", "", "general",0);
 		// act
 		String result = underTest.getSpecialty();
 		Assert.assertEquals("general", result);
@@ -30,7 +30,7 @@ public class WitchDoctorTest {
 
 	@Test
 	public void shouldHaveAName() {
-		Doctor underTest = new WitchDoctor("", "Robert", "voodoo");
+		Doctor underTest = new WitchDoctor("Robert", "", "voodoo" ,0);
 
 		String result = underTest.getName();
 
@@ -39,14 +39,14 @@ public class WitchDoctorTest {
 	@Test
 	public void shouldHaveAlternativeSpecialty() {
 		//arrange
-		Doctor underTest = new WitchDoctor("","", "voodoo");
+		Doctor underTest = new WitchDoctor("","", "voodoo", 0);
 		//act
 		String result = underTest.getSpecialty();
 		Assert.assertEquals("voodoo", result);
 	}
 	@Test
 	public void shouldDrawBlood() {
-		Doctor underTest = new WitchDoctor("Emp 2","Dr. Spaceman", "voodoo");
+		Doctor underTest = new WitchDoctor("Emp 2","Dr. Spaceman", "voodoo" , 0);
 		
 		Patient bob = new Patient();
 		underTest.drawBlood(bob);
@@ -55,7 +55,7 @@ public class WitchDoctorTest {
 	}
 	@Test
 	public void increasePatientHealth() {
-		Doctor underTest = new WitchDoctor("Emp 2","Dr. Spaceman", "buttocks");
+		Doctor underTest = new WitchDoctor("Emp 2","Dr. Spaceman", "buttocks" , 0);
 		
 		Patient bob = new Patient();
 		underTest.increasePatientHealth(bob);

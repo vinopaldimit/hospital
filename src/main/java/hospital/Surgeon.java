@@ -3,8 +3,8 @@ package hospital;
 public class Surgeon extends Doctor {
 	private boolean operating;
 
-	public Surgeon(String employeeNumber, String name, String specialty) {
-		super(employeeNumber, name, specialty, 120000);
+	public Surgeon(String name ,String employeeNumber, String specialty) {
+		super(name,employeeNumber, specialty, 120000);
 		operating = false;
 	}
 
@@ -14,6 +14,12 @@ public class Surgeon extends Doctor {
 
 	public void toggleOperating() {
 		operating = !operating;
+	}
+
+	@Override
+	public String toString() {
+		return "Employee [name=" + getName() + ", employeeNumber=" + getEmployeeNumber() + ", salary=" + getSalary() +  ", specialty=" + getSpecialty() + ", operating=" + operating + "]";
+
 	}
 
 }

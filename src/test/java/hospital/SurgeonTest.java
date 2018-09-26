@@ -60,7 +60,7 @@ public class SurgeonTest {
 	
 	@Test
 	public void shouldHaveAName() {
-		Surgeon underTest = new Surgeon("","Robert","buttocks");
+		Surgeon underTest = new Surgeon("Robert", "","buttocks");
 		
 		String result = underTest.getName();
 		
@@ -69,7 +69,7 @@ public class SurgeonTest {
 	
 	@Test
 	public void shouldHaveANameOtherThanRobertAnyOneElse() {
-		Surgeon underTest = new Surgeon("Emp 2","Dr. Spaceman", "buttocks");
+		Surgeon underTest = new Surgeon("Dr. Spaceman", "Emp 2","buttocks");
 		
 		String result = underTest.getName();
 		
@@ -105,7 +105,7 @@ public class SurgeonTest {
 	}
 	@Test
 	public void increasePatientHealth2() {
-		Surgeon underTest = new Surgeon("Emp 2","Dr. Spaceman", "buttocks");
+		Surgeon underTest = new Surgeon("Dr. Spaceman","Emp 2", "buttocks");
 		
 		Patient bob = new Patient(2);
 		underTest.increasePatientHealth(bob);
@@ -114,13 +114,13 @@ public class SurgeonTest {
 	}
 	@Test
 	public void shouldHaveAnEmployeeNumber() {
-		Surgeon underTest = new Surgeon("Emp 1","Dr. Spaceman", "buttocks");
+		Surgeon underTest = new Surgeon("Dr. Spaceman", "Emp 1", "buttocks");
 		String result = underTest.getEmployeeNumber();
 		assertThat(result, is(equalTo("Emp 1")));
 	}	
 	@Test
 	public void shouldHaveADifferentEmployeeNumber() {
-		Surgeon underTest = new Surgeon("Emp 2","Dr. Spaceman", "buttocks");
+		Surgeon underTest = new Surgeon("Dr. Spaceman","Emp 2", "buttocks");
 		String result = underTest.getEmployeeNumber();
 		assertThat(result, is(equalTo("Emp 2")));
 	}

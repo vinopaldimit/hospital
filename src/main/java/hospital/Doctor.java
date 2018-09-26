@@ -1,28 +1,14 @@
 package hospital;
 
-public abstract class Doctor {
+public abstract class Doctor extends Employee implements DrawBlood{
 
-	protected String name;
-	protected String specialty;
-	protected String employeeNumber;
-	private int salary;
+	
+	private String specialty;
 
-	public Doctor(String employeeNumber, String name, String specialty) {
-		this.employeeNumber = employeeNumber;
-		this.name = name;
+	public Doctor(String name, String employeeNumber, String specialty, int salary) {
+		super(name, employeeNumber, salary);
 		this.specialty = specialty;
-		this.salary = 90000;
-	}
-
-	public Doctor(String employeeNumber, String name, String specialty, int salary) {
-		this.employeeNumber = employeeNumber;
-		this.name = name;
-		this.specialty = specialty;
-		this.salary = salary;
-	}
-
-	public int getSalary() {
-		return salary;
+		
 	}
 
 	public String getSpecialty() {
@@ -31,21 +17,18 @@ public abstract class Doctor {
 		return specialty;
 	}
 
-	public String getName() {
-		
-		return name;
-	}
-
-	public void drawBlood(Patient subpatient) {
-		subpatient.reduceBlood(); 		
+	@Override
+	public void drawBlood(Patient patient) {
+		patient.reduceBlood(); 		
 	}
 	
-	public void increasePatientHealth(Patient bob) {
-		bob.increaseHealth();	
+	@Override
+	public String toString() {
+		return "Employee [name=" + getName() + ", employeeNumber=" + getEmployeeNumber() + ", salary=" + getSalary() +  ", specialty=" + specialty +"]";
 	}
 
-	public String getEmployeeNumber() {
-		return employeeNumber;
+	public void increasePatientHealth(Patient patient) {
+		patient.increaseHealth();	
 	}
 
 }
