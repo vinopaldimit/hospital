@@ -7,43 +7,60 @@ public class Patient {
 
 	private int healthLevel;
 	private int bloodLevel;
-	
-	public Patient () {
-	this.bloodLevel = BLOOD_LEVEL;
-	this.healthLevel = HEALTH_LEVEL;
-	
+	private String patientName;
+	private String patientNumber;
+
+	public Patient(String patientNumber, String patientName) {
+		this.patientNumber = patientNumber;
+		this.patientName = patientName;
+		this.bloodLevel = BLOOD_LEVEL;
+		this.healthLevel = HEALTH_LEVEL;
 	}
-	public Patient (int healthLevel) {
-	this.bloodLevel = BLOOD_LEVEL;
-	this.healthLevel = healthLevel;
-	
-	}	
-	
-	
+	public Patient() {
+		this.bloodLevel = BLOOD_LEVEL;
+		this.healthLevel = HEALTH_LEVEL;
+
+	}
+
+	public Patient(int healthLevel) {
+		this.bloodLevel = BLOOD_LEVEL;
+		this.healthLevel = healthLevel;
+
+	}
+
 	public int getBloodLevel() {
 		return bloodLevel;
-			}
-
-
+	}
 
 	public void reduceBlood() {
-		bloodLevel --; 
-		
+		bloodLevel -= 1;
+
 	}
-
-
 
 	public int getHealthLevel() {
-		// TODO Auto-generated method stub
 		return healthLevel;
 	}
+
 	public void increaseHealth() {
-		healthLevel ++;
-		
+		healthLevel += 1;
+
 	}
+
 	public void reduceBlood(int pintsOfBlood) {
-	bloodLevel -= pintsOfBlood;
+		bloodLevel -= pintsOfBlood;
 	}
+	public String getPatientName() {
+		
+		return patientName;
+	}
+	@Override
+	public String toString() {
+		return "Patient ["", patientName=" + patientNamehealthLevel=" + healthLevel + ", bloodLevel=" + bloodLevel + "]";
+	}
+	public String getPatientNumber() {
+		return patientNumber;
+	}
+	
 	
 	
 

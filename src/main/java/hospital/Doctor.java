@@ -1,6 +1,6 @@
 package hospital;
 
-public abstract class Doctor extends Employee implements DrawBlood{
+public abstract class Doctor extends Employee implements DrawBlood, PatientCare{
 
 	
 	private String specialty;
@@ -27,6 +27,7 @@ public abstract class Doctor extends Employee implements DrawBlood{
 		return "Employee [name=" + getName() + ", employeeNumber=" + getEmployeeNumber() + ", salary=" + getSalary() +  ", specialty=" + specialty +"]";
 	}
 
+	@Override
 	public void increasePatientHealth(Patient patient) {
 		patient.increaseHealth();	
 	}

@@ -55,7 +55,7 @@ public class WitchDoctorTest {
 	}
 	@Test
 	public void increasePatientHealth() {
-		Doctor underTest = new WitchDoctor("Emp 2","Dr. Spaceman", "buttocks" , 0);
+		PatientCare underTest = new WitchDoctor("Emp 2","Dr. Spaceman", "buttocks" , 0);
 		
 		Patient bob = new Patient();
 		underTest.increasePatientHealth(bob);

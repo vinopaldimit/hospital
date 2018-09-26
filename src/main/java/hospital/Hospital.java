@@ -7,15 +7,24 @@ import java.util.Map;
 public class Hospital {
 
 	Map<String, Employee> employees = new HashMap<>();
+	Map<String, Patient> patients = new HashMap<>();
 	
-	public void addEmployee(Employee testJanitor) {
-		employees.put(testJanitor.getEmployeeNumber(), testJanitor);
+	public void addEmployee(Employee employee) {
+		employees.put(employee.getEmployeeNumber(), employee);
 		
 	}
 
 	public Collection<Employee> getEmployees() {
 		
 		return employees.values();
+	}
+
+	public void addPatient(Patient patient) {
+		patients.put(patient.getPatientName(), patient);
+	}
+
+	public Collection<Patient> getPatients() {
+		return patients.values();
 	}
 	
 
