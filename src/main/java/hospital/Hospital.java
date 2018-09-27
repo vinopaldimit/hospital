@@ -26,6 +26,10 @@ public class Hospital {
 	public Collection<Patient> getPatients() {
 		return patients.values();
 	}
+
+	public void removeEmployee(String fired) {
+		employees.remove(fired);
+	}
 	
 
 }
