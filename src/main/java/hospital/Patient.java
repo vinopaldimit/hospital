@@ -55,7 +55,7 @@ public class Patient {
 	}
 	@Override
 	public String toString() {
-		return "Patient ["", patientName=" + patientNamehealthLevel=" + healthLevel + ", bloodLevel=" + bloodLevel + "]";
+		return "Patient [patientName=" + patientName + ", healthLevel=" + healthLevel + ", bloodLevel=" + bloodLevel + "]";
 	}
 	public String getPatientNumber() {
 		return patientNumber;

@@ -22,7 +22,7 @@ public class HospitalTest {
 	@Test
 	public void shouldReturnPatientList () {
 		Hospital underTest = new Hospital();
-		Patient testPatient = new Patient("");
+		Patient testPatient = new Patient("","");
 		underTest.addPatient(testPatient);
 		Collection <Patient> result = underTest.getPatients();
 		assertThat(result, contains(testPatient));

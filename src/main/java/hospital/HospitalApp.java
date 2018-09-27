@@ -17,20 +17,28 @@ public class HospitalApp {
 		hospital.addEmployee(new Receptionist("Janine", "R2", 45000));
 		hospital.addEmployee(new Janitor("Rosie", "J2", 40000));
 		
-		hospital.addPatient(new Patient("JimBob"));
-		hospital.addPatient(new Patient("KimBob"));
-		hospital.addPatient(new Patient("TimBob"));
-		hospital.addPatient(new Patient("JimBean"));
-		hospital.addPatient(new Patient("JimBeana"));
+		hospital.addPatient(new Patient("1", "JimBob"));
+		hospital.addPatient(new Patient("2", "KimBob"));
+		hospital.addPatient(new Patient("3", "TimBob"));
+		hospital.addPatient(new Patient("4", "JimBean"));
+		hospital.addPatient(new Patient("5", "JimBeana"));
 		
 		for(Employee employee: hospital.getEmployees() ) {
 			System.out.println(employee);
 		}
 		
+		System.out.println("");
+		
 		for(Patient patient: hospital.getPatients()) {
 			System.out.println(patient);
 		}
 			
+		System.out.println("\nThese employees can draw blood:");
+		for(Employee employee : hospital.getEmployees()) {
+			if(employee instanceof DrawBlood) {
+				System.out.println((DrawBlood)employee);
+			}
+		}
 		
 	}
 }
